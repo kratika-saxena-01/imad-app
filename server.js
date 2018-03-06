@@ -50,7 +50,7 @@ var template=`
 </html>
 `;
     
-    return Template;
+    return template;
 }
 
 
