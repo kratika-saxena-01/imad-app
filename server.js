@@ -3,13 +3,64 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
+
+
+var articleOne={
+    title : 'Article-One | Kratika Saxena',
+    heading : 'Article-One',
+    date : 'March 6, 2018',
+    content : `<p>this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.
+            </p>
+            <p>
+                this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.this is the content of my first article.
+            </p>`
+};
+function createTemplate(data)
+{
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+
+var template=`
+<html>
+    
+    <head>
+        <title>${title}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+        <h3>
+            ${heading}
+        </h3>
+        <div>
+            ${date}
+        </div>
+        <div>
+            ${content}
+        </div>
+        </div>
+    </body>
+</html>
+`;
+    
+    return htmlTemplate;
+}
+
+
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function (req,res){res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));});
+app.get('/article-one',function (req,res){res.send(createTemplate(articleOne));});
 app.get('/article-two',function (req,res){res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));});
 app.get('/article-three',function (req,res){res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));});
 
