@@ -16,7 +16,10 @@ button.onclick=function(){
                 var span=document.getElementById('count');
                 span.innerHTML=counter.toString();
             }
+        
+            
         }
+        
         //not done anything
     };
     //make a request to the counter endpoint
