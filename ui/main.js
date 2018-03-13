@@ -5,6 +5,6 @@ element.innerHTML='kratika';
 
 //move image
 var img=document.getElementById('two');
-img.onClick=function(){
+img.onclick=function(){
   img.style.marginLeft='100px';  
 };
