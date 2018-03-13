@@ -1,6 +1,6 @@
 //counter code
 var counter=0;
-var button = document.gatElementById('button');
+var button = document.gatElementById('three');
 button.onclick=function(){
     //make a request to the counter endpoint
     //capture the response and store it in a variable
