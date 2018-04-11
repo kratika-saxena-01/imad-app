@@ -81,7 +81,7 @@ app.use(morgan('combined'));
 
 var pool = new Pool(config);
 
-app.get('/test_db',function(req,res){
+app.get('/test-db',function(req,res){
     
     //make a select request
     //return response with result
